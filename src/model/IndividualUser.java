@@ -9,6 +9,6 @@ public class IndividualUser extends User {
     }
 
     public String getTaxId() {
-        return taxId;
-    }
+        return taxId;
+        }
 }
