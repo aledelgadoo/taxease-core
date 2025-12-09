@@ -6,5 +6,5 @@ public class CorporateUser extends User {
     public CorporateUser(String id, String name, String email, String companyRegNumber) {
         super(id, name, email);
         this.companyRegNumber = companyRegNumber;
-    }
+                }
 }
