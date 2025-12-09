@@ -8,14 +8,14 @@ public class TaxReturn {
     private String id;
     private User taxpayer;
     private List<Document> documents;
-    private TaxReturnStatus status;
+    private TaxReturnEstatus status;
     private double totalTaxResult; // Positive = To Pay, Negative = To Refund
 
     public TaxReturn(String id, User taxpayer) {
         this.id = id;
         this.taxpayer = taxpayer;
         this.documents = new ArrayList<>();
-        this.status = TaxReturnStatus.DRAFT;
+        this.status = TaxReturnEstatus.DRAFT;
         this.totalTaxResult = 0.0;
     }
 
@@ -35,7 +35,7 @@ public class TaxReturn {
         return totalTaxResult;
     }
 
-    public void setStatus(TaxReturnStatus status) {
+    public void setStatus(TaxReturnEstatus status) {
         this.status = status;
     }
 
