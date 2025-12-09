@@ -1,15 +1,77 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import model.*;
+import service.OcrService;
+import service.TaxCalculator;
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Services initialization
+        OcrService ocrService = new OcrService();
+        TaxCalculator taxCalculator = new TaxCalculator();
+        Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        System.out.println("==========================================");
+        System.out.println("   Welcome to TaxEase (CLI Version 1.0)   ");
+        System.out.println("==========================================");
+
+        // 1. Create a User (Simulating Login)
+        // Using the B2C profile as described in the dossier
+        User currentUser = new IndividualUser("U001", "Ana Garcia", "ana@example.com", "12345678Z");
+        System.out.println(">> Logged in as: " + currentUser.getName());
+
+        // 2. Create a new Tax Return Draft
+        TaxReturn myTaxReturn = new TaxReturn("TR-2025-001", currentUser);
+        System.out.println(">> Created new Tax Return Draft.");
+
+        // 3. Simple Menu Loop
+        boolean running = true;
+        while (running) {
+            System.out.println("\nSelect an action:");
+            System.out.println("1. Scan Document (Simulate OCR)");
+            System.out.println("2. Calculate Tax (Deduction Engine)");
+            System.out.println("3. View Summary");
+            System.out.println("4. Exit");
+            System.out.print("> ");
+
+            String option = scanner.nextLine();
+
+            switch (option) {
+                case "1":
+                    System.out.print("Enter filename (e.g., 'lunch_bill.jpg' or 'june_payslip.pdf'): ");
+                    String filename = scanner.nextLine();
+
+                    // Use the Service to extract data
+                    Document doc = ocrService.extractData(filename);
+
+                    // Add to the model
+                    myTaxReturn.addDocument(doc);
+                    System.out.println(">> Added: " + doc);
+                    break;
+
+                case "2":
+                    // Calculate Logic
+                    taxCalculator.calculateTax(myTaxReturn);
+                    System.out.println(">> Tax calculation updated based on current documents.");
+                    break;
+
+                case "3":
+                    // Show results
+                    System.out.println("------------------------------------------");
+                    System.out.println(myTaxReturn.getSummary());
+                    System.out.println("Total Documents: " + myTaxReturn.getDocuments().size());
+                    System.out.println("ESTIMATED TAX: " + myTaxReturn.getTotalTaxResult() + "€");
+                    System.out.println("------------------------------------------");
+                    break;
+
+                case "4":
+                    running = false;
+                    System.out.println("Exiting TaxEase...");
+                    break;
+
+                default:
+                    System.out.println("Invalid option.");
+            }
         }
     }
 }
