@@ -1,9 +1,9 @@
 package service;
 
-import model.Document;
-import model.DocumentType;
-import model.TaxReturn;
-import model.TaxReturnEstatus;
+import model.document.Document;
+import model.document.DocumentType;
+import model.taxReturn.TaxReturn;
+import model.taxReturn.TaxReturnEstatus;
 
 public class TaxCalculator {
 

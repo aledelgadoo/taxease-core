@@ -1,4 +1,4 @@
-package model;
+package model.taxReturn;
 
 public enum TaxReturnEstatus {
     DRAFT,

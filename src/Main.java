@@ -1,4 +1,7 @@
-import model.*;
+import model.document.Document;
+import model.taxReturn.TaxReturn;
+import model.users.IndividualUser;
+import model.users.User;
 import service.OcrService;
 import service.TaxCalculator;
 

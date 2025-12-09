@@ -1,4 +1,4 @@
-package model;
+package model.users;
 
 public class CorporateUser extends User {
     private String companyRegNumber; // CIF or Registration Number

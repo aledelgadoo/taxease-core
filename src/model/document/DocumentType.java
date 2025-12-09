@@ -1,4 +1,4 @@
-package model;
+package model.document;
 
 public enum DocumentType {
     INVOICE,

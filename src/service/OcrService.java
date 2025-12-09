@@ -1,6 +1,6 @@
 package service;
-import model.Document;
-import model.DocumentType;
+import model.document.Document;
+import model.document.DocumentType;
 
 import java.time.LocalDate;
 import java.util.Random;

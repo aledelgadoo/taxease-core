@@ -1,4 +1,4 @@
-package model;
+package model.users;
 
 public class IndividualUser extends User {
     private String taxId;

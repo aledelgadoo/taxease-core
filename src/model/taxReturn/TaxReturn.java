@@ -1,4 +1,7 @@
-package model;
+package model.taxReturn;
+
+import model.document.Document;
+import model.users.User;
 
 import java.util.ArrayList;
 import java.util.List;
