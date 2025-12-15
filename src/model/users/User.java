@@ -1,5 +1,12 @@
 package model.users;
 
+/**
+ * Abstract base class representing a generic user of the TaxEase platform.
+ * <p>
+ * It serves as the foundation for both individual (B2C) and corporate (B2B) profiles,
+ * storing common attributes such as the unique ID, name, and email address.
+ * </p>
+ */
 public abstract class User {
     private String id;
     private String name;
