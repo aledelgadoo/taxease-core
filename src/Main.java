@@ -7,6 +7,14 @@ import service.TaxCalculator;
 
 import java.util.Scanner;
 
+/**
+ * Entry point of the TaxEase application (Lite Version).
+ * <p>
+ * This class provides a Command Line Interface (CLI) to demonstrate the core functionality
+ * required for the project assessment. It handles the user flow: logging in, simulating
+ * [cite_start]document scanning, and triggering the tax calculation engine[cite: 371].
+ * </p>
+ */
 public class Main {
     public static void main(String[] args) {
         // Services initialization
