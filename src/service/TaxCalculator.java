@@ -5,6 +5,13 @@ import model.document.DocumentType;
 import model.taxReturn.TaxReturn;
 import model.taxReturn.TaxReturnEstatus;
 
+/**
+ * Service responsible for the business logic of tax calculation and deduction optimization.
+ * <p>
+ * It processes all documents within a {@link taxease.model.TaxReturn}, separates income from
+ * [cite_start]deductible expenses, and computes the final tax liability based on a simplified tax rate[cite: 50].
+ * </p>
+ */
 public class TaxCalculator {
 
     private static final double TAX_RATE = 0.15; // Flat tax rate of 15% for this example
