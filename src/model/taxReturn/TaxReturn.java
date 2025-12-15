@@ -6,7 +6,14 @@ import model.users.User;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Represents a tax return draft for a specific user.
+ * <p>
+ * This class acts as the central container (Aggregate Root) that holds the list of
+ * scanned documents, the current processing status, and the calculated financial result
+ * (To Pay or To Refund) [cite_start][cite: 52].
+ * </p>
+ */
 public class TaxReturn {
     private String id;
     private User taxpayer;
