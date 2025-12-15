@@ -5,6 +5,14 @@ import model.document.DocumentType;
 import java.time.LocalDate;
 import java.util.Random;
 
+/**
+ * Service responsible for simulating the Optical Character Recognition (OCR) and AI processes.
+ * <p>
+ * Since a real AI cannot be implemented in this prototype, this service mocks the data extraction
+ * by analyzing filenames to determine the document type and amount, simulating the feature
+ * [cite_start]described in the dossier[cite: 48].
+ * </p>
+ */
 public class OcrService {
     /**
      * Simulates the AI extraction process described in the dossier.
